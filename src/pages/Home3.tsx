@@ -20,14 +20,14 @@ export default function Home3() {
       // iPhone 14 Pro Max: 430px, iPhone 14/13: 390px, iPhone 13 mini: 375px
       if (window.innerWidth <= 430) {
         setVideoSrc(
-          currentVideo === "first" ? "/video_second_2.mp4" : "/video_three.mp4"
+          currentVideo === "first" ? "/video_second_2_webm.webm" : "/video_three.mp4"
         );
       } else {
         setVideoSrc(
-          currentVideo === "first" ? "/video_second.mp4" : "/video_first.mp4"
+          currentVideo === "first" ? "/video_second.webm" : "/video_first.mp4"
         );
       }
-    };
+    }; 
 
     handleResize(); // Check on mount
     window.addEventListener("resize", handleResize);
@@ -98,7 +98,7 @@ export default function Home3() {
               }}
               className={`w-full h-full object-cover relative z-10 transition-opacity duration-200 ${isTransitioning || showSecondVideo ? 'opacity-0' : 'opacity-100'}`}
             >
-              <source src={videoSrc} type="video/mp4" />
+              {/* <source src={videoSrc} type="video/mp4" /> */}
             </video>
 
             {/* Second Video - Preloaded and ready */}
