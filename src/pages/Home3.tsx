@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import MusicPlayer from "../components/MusicPlayer";
+
 export default function Home3() {
   const [videoSrc, setVideoSrc] = useState("/video_second.mp4");
   const [currentVideo, setCurrentVideo] = useState("first");
   const videoRef = useRef<HTMLVideoElement>(null);
   const secondVideoRef = useRef<HTMLVideoElement>(null);
-  const [openInvitation, setOpenInvitation] = useState(false);
+  const [openInvitation, setOpenInvitation] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showSecondVideo, setShowSecondVideo] = useState(false);
 
@@ -77,7 +78,7 @@ export default function Home3() {
   };
 
   return (
-    <section className="flex justify-center items-center flex-col h-screen w-full max-w-lg md:max-w-2xl mx-auto relative overflow-hidden">
+    <section className="flex justify-center items-center flex-col h-screen w-full max-w-sm mx-auto relative overflow-hidden container">
       <MusicPlayer />
       <div className="absolute inset-0 w-full h-full">
         {!openInvitation ? (
@@ -102,7 +103,7 @@ export default function Home3() {
                   videoRef.current.play().catch(console.log);
                 }
               }}
-              className={`w-full h-full object-cover relative z-10 transition-opacity duration-200 ${
+              className={`w-full h-full object-contain relative z-10 transition-opacity duration-200 ${
                 isTransitioning || showSecondVideo ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -121,7 +122,7 @@ export default function Home3() {
                   ? "/video_three.mp4"
                   : "/video_first.mp4"
               }
-              className={`w-full h-full object-cover absolute inset-0 z-10 transition-opacity duration-200 ${
+              className={`w-full h-full object-cover absolute aspect-[9/16] inset-0 z-10 transition-opacity duration-200 ${
                 showSecondVideo ? "opacity-100" : "opacity-0"
               }`}
             >

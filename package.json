@@ -1,5 +1,5 @@
 {
-  "name": "sengneath-engagement",
+  "name": "Sambathoudom",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.10.5",
     "gsap": "^3.13.0",
     "lucide-react": "^0.507.0",

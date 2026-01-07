@@ -9,6 +9,9 @@ export default {
       backgroundImage: {
         'frame': `url('/lframe.png'), url('/rframe.png')`
       },
+      aspectRatio: {
+        '9/16': '9 / 16',
+      },
       colors: {
         sand: '#D3C8B3',
         nude1: '#d6c2b2',
