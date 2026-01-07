@@ -7,7 +7,7 @@ import { INVSAMPE } from "./components/data/sample";
 
 const Home4 = () => {
   const { id } = useParams();
-  const [openInvitation, setOpenInvitation] = useState(true);
+  const [openInvitation, setOpenInvitation] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   // this should filter from api for use data mock up
@@ -30,20 +30,18 @@ const Home4 = () => {
     <div className="mx-auto container h-screen">
       {/* 1. Main Content (The Invitation) */}
       {openInvitation && <HomeScreen />}
+
       {/* 2. Splash Screen */}
       {!openInvitation && !isLoading && (
-        <>
-          <SplashScreen name={sample.name} onClick={handleOpenDoor} />
-        </>
+        <SplashScreen name={sample.name} onClick={handleOpenDoor} />
       )}
-
       {/* 3. Loading Overlay with Fade Backdrop */}
       {isLoading && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500">
           {/* Animated Spinner */}
           <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin"></div>
           <p className="mt-4 text-white font-moulpali animate-pulse">
-            សូមរង់ចាំបន្តិច...
+            សូមរង់ចាំបន្តិច... កែខ្លួនឯង
           </p>
         </div>
       )}

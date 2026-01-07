@@ -145,7 +145,7 @@ export default function Home3() {
                   សូមគោរពអញ្ចើញ
                 </p>
                 <div className="relative w-full max-w-sm">
-                  <p className="absolute bottom-3 left-1/2 -translate-x-1/2 text-center text-sm text-[#f9c20c]  moul-regular  drop-shadow-lg w-full">
+                  <p className="absolute bottom-3 left-1/2 -translate-x-1/2 text-center text-sm text-primary  moul-regular  drop-shadow-lg w-full">
                     លោក ចាំង សុវណ្ណរិទ្ធីឌីរតនះ​ និងភរិយា (កុលាប)
                   </p>
                   <img
@@ -195,7 +195,7 @@ export default function Home3() {
                 />
               </div>
               <div className="flex flex-col items-center justify-center pt-2">
-                <p className="moulpali-medium text-[#f9c20c]">
+                <p className="moulpali-medium text-primary">
                   កម្រងរូបភាពអាពាហ៍ពិពាហ៍របស់យើង
                 </p>
                 <div className="grid grid-cols-2 gap-4 p-4  ">

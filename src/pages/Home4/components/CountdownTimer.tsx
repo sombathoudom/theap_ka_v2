@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { toKhmerNumeral } from "./data/sample";
+import { toKhmerNumeral } from "../../../utils/validation";
 
 // 1. Define the State interface
 interface TimeLeft {
