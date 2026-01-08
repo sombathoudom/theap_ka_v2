@@ -1,4 +1,4 @@
-import { FadeIn, Reveal } from "./AnimationWrapper";
+import { FadeIn } from "./AnimationWrapper";
 import CountdownTimer from "./CountdownTimer";
 import { INVSAMPE } from "./data/sample";
 
@@ -40,7 +40,12 @@ const SplashScreen = ({
             <p className="text-center z-10 text-lg moulpali-medium text-white">
               សូមគោរពអញ្ចើញ
             </p>
-            <div className="z-10 p-3 max-w-sm mx-3 border border-yellow-400 backdrop-blur-sm rounded-lg">
+            <div className="z-10 p-3 max-w-sm mx-3 backdrop-blur-sm relative">
+              <img
+                src="/2.svg"
+                alt="frame"
+                className="h-full absolute inset-0 w-full"
+              />
               <p className="text-center text-yellow-400 text-sm moulpali-medium leading-7">
                 {name}
               </p>

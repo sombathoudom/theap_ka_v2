@@ -3,7 +3,8 @@ import { km } from "date-fns/locale";
 import { toKhmerNumeral } from "../../../../utils/validation";
 import { TimeLineItem } from "../TimeLine";
 import { Calendar } from "lucide-react";
-
+export type InvType = typeof INVSAMPE;
+export type Lang = "en" | "kh";
 export const INVSAMPE = {
   parents: {
     kh: [

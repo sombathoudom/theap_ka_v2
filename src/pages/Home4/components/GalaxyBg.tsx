@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useRef } from "react";
+import { PropsWithChildren, useEffect, useRef } from "react";
 
 // ១. បង្កើត Interface សម្រាប់ Star ដើម្បីឱ្យ TypeScript ងាយស្រួលយល់
 interface IStar {
@@ -11,8 +11,12 @@ interface IStar {
   draw: (ctx: CanvasRenderingContext2D, width: number, height: number) => void;
 }
 
+const BG_COLOR = "#7B542F";
+
 const GalaxyBackground = ({ children }: PropsWithChildren) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const animationFrameRef = useRef<number>();
+  const starsRef = useRef<IStar[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,14 +24,6 @@ const GalaxyBackground = ({ children }: PropsWithChildren) => {
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
-
-    let stars: Star[] = [];
-    let animationFrameId: number;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
 
     // ២. បន្ថែម Access Modifiers (public) ក្នុង Class
     class Star implements IStar {
@@ -60,11 +56,8 @@ const GalaxyBackground = ({ children }: PropsWithChildren) => {
         width: number,
         height: number
       ) {
-        // គណនាទីតាំងផ្កាយផ្អែកលើ Depth (3D Projection)
         const sx = (this.x / this.z) * width + width / 2;
         const sy = (this.y / this.z) * height + height / 2;
-
-        // បង្កើតចលនារីកធំនៅពេលផ្កាយហោះមកជិត
         const r = (1 - this.z / width) * this.size * 5;
 
         if (sx < 0 || sx > width || sy < 0 || sy > height) return;
@@ -76,48 +69,64 @@ const GalaxyBackground = ({ children }: PropsWithChildren) => {
       }
     }
 
+    const clearCanvasWithBg = () => {
+      ctx.fillStyle = BG_COLOR;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    };
+
+    // helper to initialize stars and resize canvas
     const init = () => {
-      stars = [];
+      // Adjust canvas size to window
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      // Fill bg
+      clearCanvasWithBg();
+      // Recreate stars
+      const stars: IStar[] = [];
       for (let i = 0; i < 400; i++) {
         stars.push(new Star());
       }
+      starsRef.current = stars;
     };
 
     const animate = () => {
-      ctx.fillStyle = "#7B542F";
+      ctx.fillStyle = BG_COLOR;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      const stars = starsRef.current;
       stars.forEach((star) => {
         star.update();
         star.draw(ctx, canvas.width, canvas.height);
       });
 
-      animationFrameId = requestAnimationFrame(animate);
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    window.addEventListener("resize", resize);
-    resize();
+    const handleResize = () => {
+      // Stop animation during resize to avoid referencing old canvas sizes
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      init();
+      animate();
+    };
+
+    // Initial setup
     init();
     animate();
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", handleResize);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, []);
 
   return (
     <div className="relative w-full h-full overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
-      {/* Nebula Layers */}
-      {/* <div className="absolute inset-0 z-1 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full blur-[120px] animate-pulse" />
-        <div
-          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full blur-[120px] animate-pulse"
-          style={{ animationDelay: "2s" }}
-        />
-      </div> */}
-
       <div className="relative z-10 flex flex-col items-start h-full px-4 text-center overflow-auto">
         {children}
       </div>
