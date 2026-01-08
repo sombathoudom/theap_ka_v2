@@ -2,8 +2,7 @@ import { useState, useTransition } from "react";
 import SplashScreen from "./components/SplashScreen";
 import { useParams } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
-import CountdownTimer from "./components/CountdownTimer";
-import { INVSAMPE } from "./components/data/sample";
+import GalaxyBackground from "./components/GalaxyBg";
 
 const Home4 = () => {
   const { id } = useParams();
@@ -28,15 +27,11 @@ const Home4 = () => {
   };
   return (
     <div className="mx-auto container h-screen relative">
-      {/* <img
-        src="/background_paper.png"
-        className="w-full h-full object-cover fixed inset-0 z-0"
-      ></img> */}
       {/* 1. Main Content (The Invitation) */}
       {openInvitation && (
-        <div className="min-h-dvh w-full bg-[url('/background_paper.png')] bg-cover bg-center bg-fixed">
+        <GalaxyBackground>
           <HomeScreen />
-        </div>
+        </GalaxyBackground>
       )}
 
       {/* 2. Splash Screen */}

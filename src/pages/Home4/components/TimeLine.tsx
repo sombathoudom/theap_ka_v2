@@ -91,12 +91,12 @@ function TimeLineCard({
         transition={{ duration: 0.5, delay: 0.8 }}
         className={cn("w-full ml-12")}
       >
-        <h3 className="text-lg font-bold leading-tight flex items-center">
-          {timeline.title}
-        </h3>
-        <span className="text-xs sm:text-sm font-medium">
-          {timeline.subtitle}
-        </span>
+        <div className="flex flex-col items-start">
+          <h3 className="text-lg font-bold leading-tight flex items-center">
+            {timeline.title}
+          </h3>
+          <span className="text-sm font-medium">{timeline.subtitle}</span>
+        </div>
       </motion.div>
     </motion.div>
   );

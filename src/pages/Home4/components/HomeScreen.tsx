@@ -5,7 +5,7 @@ import { INVSAMPE, items } from "./data/sample";
 import { toKhmerNumeral } from "../../../utils/validation";
 import TimeLine from "./TimeLine";
 import { Reveal } from "./AnimationWrapper";
-import Masonry from "./Mansony";
+import BentoGrid from "./BentoGrid";
 
 const HomeScreen = () => {
   return (
@@ -248,20 +248,11 @@ const HomeScreen = () => {
       </Reveal>
       {/* Aniversary content */}
       <Reveal>
-        <div className="flex flex-col items-center gap-4 pt-2 relative max-w-sm mx-auto min-h-dvh">
+        <div className="flex flex-col items-center gap-4 pt-2">
           <p className="moulpali-medium text-primary">
             កម្រងរូបភាពអាពាហ៍ពិពាហ៍របស់យើង
           </p>
-          <Masonry
-            items={items}
-            duration={1}
-            stagger={0.05}
-            animateFrom="center"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={true}
-          />
+          <BentoGrid />
         </div>
       </Reveal>
       <TimeLine />

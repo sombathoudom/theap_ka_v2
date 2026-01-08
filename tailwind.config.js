@@ -36,6 +36,10 @@ export default {
           '50%': { transform: 'perspective(400px) rotateY(-20deg)' },
           '100%': { transform: 'perspective(400px) rotateY(20deg)' },
         },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
       },
       animation: {
         zoom: 'zoom 2s ease-in-out infinite',
@@ -43,6 +47,7 @@ export default {
         float: 'float 2s ease-in-out infinite',
         turn3D: 'turn3D 4s ease-in-out infinite alternate',
         'zoom-in-out': 'zoomInOut 5s ease-in-out infinite',
+        'fade-in': 'fadeIn 3s ease-in-out',
       },
     },
   },
