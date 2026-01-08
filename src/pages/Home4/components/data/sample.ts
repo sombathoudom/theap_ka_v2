@@ -33,21 +33,21 @@ export const INVSAMPE = {
       {
         name1: {
           label: "Mr",
-          value: "ហាយ សៀងហៃ",
+          value: "HOY SIENGHAI",
         },
         name2: {
           label: "Mrs",
-          value: "អ៊ូច សាវឿន",
+          value: "OUCH SAVOEUN",
         },
       },
       {
         name1: {
           label: "Mr",
-          value: "ចក់ ធឿន",
+          value: "CHAK THUEN",
         },
         name2: {
           label: "Mrs",
-          value: "លី ម៉ាលីន",
+          value: "LY MALIN",
         },
       },
     ],
@@ -55,22 +55,22 @@ export const INVSAMPE = {
   header: {
     kh: {
       main: "សិរីមង្គលអាពាហ៍ពិពាហ៍",
-      title: "យើងខ្ញុំមានកិត្តិយសសួមគោរពអញ្ជើញ",
+      title: "យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ",
       desc: `ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាអធិបតី និងភ្ញៀវកិតិ្តយសដ៏ខ្ពង់ខ្ពស់ក្នុង <strong class="text-sm">ពិធីរៀបអាពាហ៍ពិពាហ៍</strong> កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ`,
     },
     en: {
       main: "The Wedding Invitation",
-      title: "យើងខ្ញុំមានកិត្តិយសសួមគោរពអញ្ជើញ",
-      desc: `ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី អ្នកនាង កញ្ញា អញ្ជើញចូលរួមជាអធិបតី និងភ្ញៀវកិតិ្តយសដ៏ខ្ពង់ខ្ពស់ក្នុង <strong class="text-sm">ពិធីរៀបអាពាហ៍ពិពាហ៍</strong> កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ`,
+      title: "",
+      desc: `Cordially Request the hornor of Your Presence of the Auspicious Occasion of the Wedding Reception of Our Children`,
     },
   },
   map: {
     desc: `កម្មវិធីប្រព្រឹត្តទៅនៅថ្ងៃ
-          <b class="text-sm text-primary">
+          <b class="text-sm text-primary moul-regular">
             អាទិត្យ ៦កើត ខែផល្គុន ឆ្នាំម្សាញ់ សប្ដស័ក ព.ស ២៥៦៩
           </b>
           ត្រូវនឹង
-          <b className="text-sm text-primary">
+          <b className="text-sm text-primary moul-regular">
             ${toKhmerNumeral(
               format(
                 parseISO("2026-02-22T05:00:00"),
@@ -82,7 +82,7 @@ export const INVSAMPE = {
             )}
           </b>
           ស្ថិតនៅ
-          <b class="text-sm text-primary">
+          <b class="text-sm text-primary moul-regular">
             ទីស្នាក់ការគណបក្សប្រជាជនកម្ពុជា(ខណ្ឌដង្កោ) សង្កាត់ដង្កោ ខណ្ឌដង្កោ
             រាជធានីភ្នំពេញ
           </b>
@@ -101,12 +101,12 @@ export const INVSAMPE = {
     },
     en: {
       name1: {
-        label: "Mr",
-        value: "ឆេង សម្បត្តិឧត្តម",
+        label: "Groom",
+        value: "CHHENG SOMBATHOUDOM",
       },
       name2: {
-        label: "Miss",
-        value: "គង់ លីណា",
+        label: "Bride",
+        value: "KONG LYNA",
       },
     },
   },
@@ -115,18 +115,28 @@ export const INVSAMPE = {
 
 export const TIMELINE: TimeLineItem[] = [
   {
-    title: "វេលាម៉ោង ៥",
-    subtitle: "រៀបចំញាំការ",
+    title: "វេលាម៉ោង ​១៣:៥០ រសៀល",
+    subtitle: "ជួបជុំភ្ញៀវកិត្តិយសទាំងអស់ដើម្បីរៀបចំកិច្ចក្រុងពាលី",
     icon: Calendar,
   },
   {
-    title: "វេលាម៉ោង ៥",
-    subtitle: "រៀបចំញាំការ",
+    title: "វេលាម៉ោង ​១៤:០០ រសៀល",
+    subtitle: "ពិធីសែនក្រុងពាលី",
     icon: Calendar,
   },
   {
-    title: "វេលាម៉ោង ៥",
-    subtitle: "រៀបចំញាំការ",
+    title: "វេលាម៉ោង ​១៥:០០ រសៀល",
+    subtitle: "ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត",
+    icon: Calendar,
+  },
+  {
+    title: "វេលាម៉ោង ​១៦:០០ រសៀល",
+    subtitle: "ពិធីសែនព្រេនជីដូន ជីតា គួចចំណងដៃតូច​ ជុំពេលានិងចាវខាន់ស្លា",
+    icon: Calendar,
+  },
+  {
+    title: "វេលាម៉ោង ​១៦:៥០ រសៀល",
+    subtitle: "អញ្ជើញភ្ញៀវកិត្តិយសទទួលទានអាហារពេលល្ងាច",
     icon: Calendar,
   },
 ];

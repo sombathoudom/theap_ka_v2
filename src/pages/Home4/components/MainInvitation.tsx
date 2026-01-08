@@ -26,7 +26,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
                 <span className="text-[12px] text-white moulpali-regular leading-8 whitespace-nowrap">
                   {p.name1.label}
                 </span>
-                <p className=" text-primary text-sm moulpali-medium leading-8 text-center whitespace-nowrap col-span-2">
+                <p className=" text-primary text-sm moul-regular leading-8 text-center whitespace-nowrap col-span-2">
                   {p.name1.value}
                 </p>
               </div>
@@ -34,7 +34,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
                 <span className="text-[12px] text-white moulpali-regular leading-8 whitespace-nowrap">
                   {p.name2.label}
                 </span>
-                <p className="text-primary text-sm moulpali-medium leading-8 text-center whitespace-nowrap col-span-2 ">
+                <p className="text-primary text-sm moul-regular leading-8 text-center whitespace-nowrap col-span-2 ">
                   {p.name2.value}
                 </p>
               </div>
@@ -45,7 +45,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
       {/* Invitation message */}
       <div className="space-y-3 max-w-md">
         <div>
-          <h1 className="text-center text-primary text-lg moulpali-regular leading-10">
+          <h1 className="text-center text-primary  text-lg moul-regular  leading-10">
             {data.header[lang].title}
           </h1>
           <div className="flex items-center justify-center">
@@ -64,16 +64,18 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
           <span className="text-[12px] text-white moulpali-regular leading-8 whitespace-nowrap text-center">
             {data.couple[lang].name1.label}
           </span>
-          <p className="text-sm moulpali-medium text-primary leading-8 text-center whitespace-nowrap">
+          <p className="text-sm moul-regular text-primary leading-8 text-center whitespace-nowrap">
             {data.couple[lang].name1.value}
           </p>
         </div>
-        <div className="text-center">symbol</div>
+        <div className="text-center">
+          <img src="/dl-symbol.png" alt="" />
+        </div>
         <div className="flex flex-col justify-center items-center">
           <span className="text-[12px] text-white moulpali-regular leading-8 whitespace-nowrap text-center">
             {data.couple[lang].name2.label}
           </span>
-          <p className="text-sm moulpali-medium  text-primary leading-8 text-center whitespace-nowrap">
+          <p className="text-sm moul-regular  text-primary leading-8 text-center whitespace-nowrap">
             {data.couple[lang].name2.value}
           </p>
         </div>
@@ -81,26 +83,26 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
       {/* Event content */}
       <div className="grid grid-cols-3 w-full items-center text-primary max-w-sm">
         {/* left */}
-        <p className="text-sm moulpali-regular leading-8 text-center whitespace-nowrap border-primary border-y py-2">
+        <p className="text-sm moul-regular leading-8 text-center whitespace-nowrap border-primary border-y py-2">
           {format(parseISO(data.date), "ថ្ងៃ eeee", {
             locale: km,
           })}
         </p>
         {/* mid */}
         <div className="text-center">
-          <p className="text-lg moulpali-regular leading-8 text-center whitespace-nowrap">
+          <p className="text-lg moul-regular leading-8 text-center whitespace-nowrap">
             {format(parseISO(data.date), "ខែ MMMM", {
               locale: km,
             })}
           </p>
-          <p className="text-5xl moulpali-regular leading-normal text-center whitespace-nowrap">
+          <p className="text-5xl moul-regular leading-normal text-center whitespace-nowrap">
             {toKhmerNumeral(
               format(parseISO(data.date), "dd", {
                 locale: km,
               })
             )}
           </p>
-          <p className="text-lg moulpali-regular leading-8 text-center whitespace-nowrap">
+          <p className="text-lg moul-regular leading-8 text-center whitespace-nowrap">
             {toKhmerNumeral(
               format(parseISO(data.date), "yyyy", {
                 locale: km,
@@ -109,7 +111,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
           </p>
         </div>
         {/* right */}
-        <p className="text-sm moulpali-regular leading-8 text-center whitespace-nowrap border-primary border-y py-2">
+        <p className="text-sm moul-regular leading-8 text-center whitespace-nowrap border-primary border-y py-2">
           {toKhmerNumeral(
             format(parseISO(data.date), "ម៉ោង HH:mm ល្ងាច", {
               locale: km,

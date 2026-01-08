@@ -86,6 +86,12 @@ html, body, #root {
     "wdth" 100;
 }
 
+.fleur-de-leah-regular {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .open-button {
   /* font-family: "Kantumruy Pro", sans-serif; */
   

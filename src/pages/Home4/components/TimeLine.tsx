@@ -92,10 +92,12 @@ function TimeLineCard({
         className={cn("w-full ml-12")}
       >
         <div className="flex flex-col items-start">
-          <h3 className="text-lg font-bold leading-tight flex items-center">
+          <h3 className="text-lg text-white font-bold moul-regular leading-tight flex items-center">
             {timeline.title}
           </h3>
-          <span className="text-sm font-medium">{timeline.subtitle}</span>
+          <span className="text-sm text-primary font-medium metal-regular">
+            {timeline.subtitle}
+          </span>
         </div>
       </motion.div>
     </motion.div>
@@ -117,11 +119,38 @@ export default function TimeLine({
         <h1 className="text-center text-3xl leading-loose moulpali-medium text-primary">
           របៀបភាវរៈកម្មវិធី
         </h1>
-        <p className="text-primary text-sm moulpali-medium leading-8 text-center whitespace-nowrap col-span-2 ">
-          កម្មវិធីថ្ងៃ សៅរ៍ ទី ២១ ខែកុម្ភៈ ឆ្មាំ២០២៦
+        <p className="text-primary text-sm moul-regular leading-8 text-center whitespace-nowrap col-span-2 ">
+          កម្មវិធីថ្ងៃទី១ ថ្ងៃ សៅរ៍ ទី ២១ ខែ កុម្ភះ ឆ្នាំ ២០២៦
         </p>
       </motion.div>
 
+      <div className="relative max-w-sm mx-auto">
+        {TIMELINE.map((timeline, index) => (
+          <TimeLineCard
+            key={index}
+            timeline={timeline}
+            last={TIMELINE.length - 1 === index}
+          />
+        ))}
+        {/* <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="absolute -bottom-4 left-3 w-6 h-6 bg-gradient-to-r from-[#f9c20c] to-yellow-200 rounded-full"
+        /> */}
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-8 md:mb-16"
+      >
+        <p className="text-primary text-sm moul-regular leading-8 text-center whitespace-nowrap col-span-2 ">
+          កម្មវិធីថ្ងៃទី២ ថ្ងៃ អាទិត្យ ទី ២២ ខែ កុម្ភះ ឆ្នាំ ២០២៦
+        </p>
+      </motion.div>
       <div className="relative max-w-sm mx-auto">
         {TIMELINE.map((timeline, index) => (
           <TimeLineCard
