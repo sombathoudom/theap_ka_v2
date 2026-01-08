@@ -1,18 +1,18 @@
 import React, { useRef } from "react";
 import { format, parseISO } from "date-fns";
 import { km } from "date-fns/locale";
-import { INVSAMPE } from "./data/sample";
+import { INVSAMPE, items } from "./data/sample";
 import { toKhmerNumeral } from "../../../utils/validation";
 import TimeLine from "./TimeLine";
-import { useInView, motion } from "framer-motion";
 import { Reveal } from "./AnimationWrapper";
+import Masonry from "./Mansony";
 
 const HomeScreen = () => {
   return (
-    <div className="space-y-6 bg-black/50">
+    <div className="space-y-6">
       {/* First Content */}
       <Reveal>
-        <section className="h-screen space-y-6 w-full flex flex-col items-center justify-center px-6">
+        <section className="h-dvh z-10 space-y-6 w-full flex flex-col items-center justify-center px-6">
           <div className="space-y-2">
             {/* header */}
             <div>
@@ -46,7 +46,7 @@ const HomeScreen = () => {
             </div>
           </div>
           {/* Invitation message */}
-          <div className="space-y-3">
+          <div className="space-y-3 max-w-md">
             <div>
               <h1 className="text-center text-primary text-lg moulpali-regular leading-10">
                 {INVSAMPE.header.kh.title}
@@ -54,13 +54,13 @@ const HomeScreen = () => {
               <div className="text-center">Symbol</div>
             </div>
             <p
-              className="text-center text-[12px] text-white moulpali-regular leading-loose"
+              className="text-center text-[12px] text-white moulpali-regular leading-[2.5]"
               dangerouslySetInnerHTML={{ __html: INVSAMPE.header.kh.desc }}
             />
           </div>
 
           {/* Couple content */}
-          <div className="grid grid-cols-3 w-full gap-4">
+          <div className="grid grid-cols-3 w-full gap-4 max-w-sm">
             <div className="flex flex-col justify-center items-center">
               <span className="text-[12px] text-white moulpali-regular leading-8 whitespace-nowrap text-center">
                 {INVSAMPE.couple.kh.name1.label}
@@ -80,7 +80,7 @@ const HomeScreen = () => {
             </div>
           </div>
           {/* Event content */}
-          <div className="grid grid-cols-3 w-full items-center text-primary">
+          <div className="grid grid-cols-3 w-full items-center text-primary max-w-sm">
             {/* left */}
             <p className="text-sm moulpali-regular leading-8 text-center whitespace-nowrap border-primary border-y py-2">
               {format(parseISO(INVSAMPE.date), "ថ្ងៃ eeee", {
@@ -120,12 +120,11 @@ const HomeScreen = () => {
           </div>
         </section>
       </Reveal>
-
       {/* Map Section */}
       <Reveal>
-        <div className="flex flex-col items-center gap-4 justify-center max-w-sm mx-auto">
+        <div className="flex flex-col items-center gap-4 justify-center max-w-md mx-auto">
           <p
-            className="text-[12px] text-white moulpali-regular leading-loose text-center"
+            className="text-[12px] text-white moulpali-regular leading-[2.5] text-center"
             dangerouslySetInnerHTML={{ __html: INVSAMPE.map.desc }}
           />
 
@@ -139,7 +138,7 @@ const HomeScreen = () => {
         </div>
       </Reveal>
       <Reveal>
-        <section className="h-screen space-y-6 w-full flex flex-col items-center justify-center px-6">
+        <section className="h-dvh space-y-6 w-full flex flex-col items-center justify-center px-6">
           <div className="space-y-2">
             {/* header */}
             <div>
@@ -181,13 +180,13 @@ const HomeScreen = () => {
               <div className="text-center">Symbol</div>
             </div>
             <p
-              className="text-center text-[12px] text-white moulpali-regular leading-loose"
+              className="text-center text-[12px] text-white moulpali-regular leading-[2.5] max-w-md"
               dangerouslySetInnerHTML={{ __html: INVSAMPE.header.en.desc }}
             />
           </div>
 
           {/* Couple content */}
-          <div className="grid grid-cols-3 w-full gap-4">
+          <div className="grid grid-cols-3 w-full gap-4 max-w-sm">
             <div className="flex flex-col justify-center items-center">
               <span className="text-[12px] text-white moulpali-regular leading-8 whitespace-nowrap text-center">
                 {INVSAMPE.couple.en.name1.label}
@@ -207,7 +206,7 @@ const HomeScreen = () => {
             </div>
           </div>
           {/* Event content */}
-          <div className="grid grid-cols-3 w-full items-center text-primary">
+          <div className="grid grid-cols-3 w-full items-center text-primary max-w-sm">
             {/* left */}
             <p className="text-sm moulpali-regular leading-8 text-center whitespace-nowrap border-primary border-y py-2">
               {format(parseISO(INVSAMPE.date), "ថ្ងៃ eeee", {
@@ -247,47 +246,24 @@ const HomeScreen = () => {
           </div>
         </section>
       </Reveal>
+      {/* Aniversary content */}
       <Reveal>
-        {/* Aniversary content */}
-        <div className="flex flex-col items-center justify-center pt-2">
+        <div className="flex flex-col items-center gap-4 pt-2 relative max-w-sm mx-auto min-h-dvh">
           <p className="moulpali-medium text-primary">
             កម្រងរូបភាពអាពាហ៍ពិពាហ៍របស់យើង
           </p>
-          <div className="grid grid-cols-2 gap-4 p-4  ">
-            <img
-              src="/photo_album_1.jpg"
-              className="rounded-lg object-cover"
-              alt=""
-            />
-            <img
-              src="/photo_album_2.jpg"
-              className="rounded-lg object-cover"
-              alt=""
-            />
-            <img
-              src="/photo_album_3.jpg"
-              className="rounded-lg object-cover"
-              alt=""
-            />
-            <img
-              src="/photo_album_4.jpg"
-              className="rounded-lg object-cover"
-              alt=""
-            />
-            <img
-              src="/photo_album_5.jpg"
-              className="rounded-lg object-cover"
-              alt=""
-            />
-            <img
-              src="/photo_album_6.jpg"
-              className="rounded-lg object-cover"
-              alt=""
-            />
-          </div>
+          <Masonry
+            items={items}
+            duration={1}
+            stagger={0.05}
+            animateFrom="center"
+            scaleOnHover={true}
+            hoverScale={0.95}
+            blurToFocus={true}
+            colorShiftOnHover={true}
+          />
         </div>
       </Reveal>
-      {/* Timeline */}
       <TimeLine />
     </div>
   );

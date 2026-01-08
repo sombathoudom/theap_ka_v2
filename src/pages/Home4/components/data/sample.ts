@@ -129,3 +129,36 @@ export const TIMELINE: TimeLineItem[] = [
     icon: Calendar,
   },
 ];
+
+export const items = [
+  {
+    id: "1",
+    img: "/photo_album_1.jpg",
+    height: 600,
+  },
+  {
+    id: "2",
+    img: "/photo_album_2.jpg",
+    height: 400,
+  },
+  {
+    id: "3",
+    img: "/photo_album_3.jpg",
+    height: 600,
+  },
+  {
+    id: "4",
+    img: "/photo_album_4.jpg",
+    height: 300,
+  },
+  {
+    id: "5",
+    img: "/photo_album_5.jpg",
+    height: 500,
+  },
+  {
+    id: "6",
+    img: "/photo_album_6.jpg",
+    height: 600,
+  },
+];

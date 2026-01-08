@@ -42,10 +42,10 @@ export interface TimeLineRoadmapProps {
 
 function TimeLineCard({
   timeline,
-  index,
+  last,
 }: {
   timeline: TimeLineItem;
-  index: number;
+  last: boolean;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -63,7 +63,9 @@ function TimeLineCard({
         initial={{ scaleY: 0 }}
         animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="absolute left-6 top-0 w-[2px] h-full bg-gradient-to-b from-[#f9c20c] to-yellow-200 origin-top"
+        className={`absolute left-6 top-0 w-[2px] h-full bg-gradient-to-b from-[#f9c20c] to-yellow-200 origin-top ${
+          last && " hidden"
+        }`}
       />
 
       {/* Timeline dot - responsive positioning */}
@@ -122,7 +124,11 @@ export default function TimeLine({
 
       <div className="relative max-w-sm mx-auto">
         {TIMELINE.map((timeline, index) => (
-          <TimeLineCard key={index} timeline={timeline} index={index} />
+          <TimeLineCard
+            key={index}
+            timeline={timeline}
+            last={TIMELINE.length - 1 === index}
+          />
         ))}
         {/* <motion.div
           initial={{ opacity: 0, scale: 0 }}

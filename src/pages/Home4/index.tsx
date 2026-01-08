@@ -7,7 +7,7 @@ import { INVSAMPE } from "./components/data/sample";
 
 const Home4 = () => {
   const { id } = useParams();
-  const [openInvitation, setOpenInvitation] = useState(false);
+  const [openInvitation, setOpenInvitation] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   // this should filter from api for use data mock up
@@ -27,9 +27,17 @@ const Home4 = () => {
     }, 2000);
   };
   return (
-    <div className="mx-auto container h-screen">
+    <div className="mx-auto container h-screen relative">
+      {/* <img
+        src="/background_paper.png"
+        className="w-full h-full object-cover fixed inset-0 z-0"
+      ></img> */}
       {/* 1. Main Content (The Invitation) */}
-      {openInvitation && <HomeScreen />}
+      {openInvitation && (
+        <div className="min-h-dvh w-full bg-[url('/background_paper.png')] bg-cover bg-center bg-fixed">
+          <HomeScreen />
+        </div>
+      )}
 
       {/* 2. Splash Screen */}
       {!openInvitation && !isLoading && (

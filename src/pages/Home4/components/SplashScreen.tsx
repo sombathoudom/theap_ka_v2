@@ -21,7 +21,7 @@ const SplashScreen = ({
       <div className="flex flex-col items-center justify-between h-full w-full z-10 inset-0 absolute">
         {/* header content */}
         <div className="w-full pt-12">
-          <FadeIn>
+          <FadeIn direction="down">
             <h1 className="text-center text-white text-2xl leading-9 moulpali-medium">
               សិរីមង្គលអាពាហ៍ពិពាហ៍
             </h1>

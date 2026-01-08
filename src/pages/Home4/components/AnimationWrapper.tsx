@@ -57,7 +57,7 @@ export const FadeIn = ({
         x: 0,
         y: 0,
       }}
-      viewport={{ once: true, amount: 0.2 }} // Trigger when 20% visible
+      viewport={{ once: false, amount: 0.2 }} // Trigger when 20% visible
       transition={{
         duration: duration,
         delay: delay,
