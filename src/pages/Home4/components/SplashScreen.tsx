@@ -1,6 +1,7 @@
 import { FadeIn } from "./AnimationWrapper";
 import CountdownTimer from "./CountdownTimer";
 import { INVSAMPE } from "./data/sample";
+import { Svg7 } from "./SvgFrame";
 
 const SplashScreen = ({
   name,
@@ -15,10 +16,10 @@ const SplashScreen = ({
       <img
         src="/splash-screen.jpeg"
         alt="dn"
-        className="z-0 h-full w-full object-cover sm:object-contain aspect-auto mx-auto transition-all delay-300 ease-in-out"
+        className="z-10 absolute inset-0 h-full w-full object-cover aspect-auto mx-auto transition-all delay-300 ease-in-out"
       />
 
-      <div className="flex flex-col items-center justify-between h-full w-full z-10 inset-0 absolute">
+      <div className="flex flex-col items-center justify-between h-full w-full z-20 inset-0 absolute">
         {/* header content */}
         <div className="w-full pt-12">
           <FadeIn direction="down">
@@ -40,13 +41,12 @@ const SplashScreen = ({
             <p className="text-center z-10 text-lg moulpali-medium text-white">
               សូមគោរពអញ្ចើញ
             </p>
-            <div className="z-10 p-3 max-w-sm mx-3 backdrop-blur-sm relative">
-              <img
-                src="/2.svg"
-                alt="frame"
-                className="h-full absolute inset-0 w-full"
-              />
-              <p className="text-center text-yellow-400 text-sm moulpali-medium leading-7">
+            <div className="z-10 p-3 relative w-full flex items-center justify-center">
+              {/* SVG ជាផ្ទៃខាងក្រោយ */}
+              <Svg7 className="w-full" />
+
+              {/* អត្ថបទស្ថិតនៅចំកណ្តាល SVG ជានិច្ច */}
+              <p className="absolute  text-center text-yellow-400 text-[12px] moulpali-medium leading-7 px-4 max-w-sm">
                 {name}
               </p>
             </div>
@@ -56,7 +56,7 @@ const SplashScreen = ({
             >
               ចុចបើកធៀប
             </button>
-            <div className="absolute bottom-0 z-0 left-0 h-full w-full bg-gradient-to-t from-slate-900 to-transparent"></div>
+            <div className="absolute bottom-0 z-0 h-full w-full bg-gradient-to-t from-black/70 to-transparent"></div>
           </div>
         </FadeIn>
       </div>

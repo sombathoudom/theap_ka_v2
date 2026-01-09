@@ -108,7 +108,7 @@ export default function TimeLine({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("relative py-8 md:py-12 px-4 md:px-0", className)}>
+    <div className={cn("relative", className)}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

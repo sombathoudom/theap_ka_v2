@@ -1,13 +1,17 @@
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import SplashScreen from "./components/SplashScreen";
 import { useParams } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
-import GalaxyBackground from "./components/GalaxyBg";
+import { useMusic } from "../../context/MusicContext";
+import { AnimatePresence, motion } from "framer-motion";
 
+export const audioUlr = "/yung kai - Blue Piano Cover Sheet Music.mp3";
 const Home4 = () => {
   const { id } = useParams();
-  const [openInvitation, setOpenInvitation] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [stage, setStage] = useState<"intro" | "splash" | "main">("intro");
+
+  // context
+  const { playTrack } = useMusic();
 
   // this should filter from api for use data mock up
   const sample = {
@@ -17,36 +21,64 @@ const Home4 = () => {
 
   // handle open door
   const handleOpenDoor = () => {
-    setIsLoading(true);
-
-    // Simulate loading for 2 seconds (2000ms)
-    setTimeout(() => {
-      setIsLoading(false);
-      setOpenInvitation(true);
-    }, 2000);
+    setStage("main");
   };
-  return (
-    <GalaxyBackground>
-      <div className="mx-auto container h-screen relative">
-        {/* 1. Main Content (The Invitation) */}
-        {openInvitation && <HomeScreen />}
 
-        {/* 2. Splash Screen */}
-        {!openInvitation && !isLoading && (
-          <SplashScreen name={sample.name} onClick={handleOpenDoor} />
+  useEffect(() => {
+    if (stage === "main") {
+      playTrack(audioUlr);
+    }
+  }, [stage]);
+
+  return (
+    <div className="relative w-full h-screen overflow-hidden max-w-md mx-auto">
+      <AnimatePresence mode="wait">
+        {/* ១. ដំណាក់កាល Video Intro */}
+        {stage === "intro" && (
+          <motion.div
+            key="intro"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-50 bg-black flex items-center justify-center"
+          >
+            <video
+              autoPlay
+              muted
+              playsInline
+              onEnded={() => setStage("splash")} // នៅពេល Video ចប់ វានឹងដូរទៅ Splash
+              className="w-full h-full object-cover"
+            >
+              <source src="/intro_video.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
         )}
-        {/* 3. Loading Overlay with Fade Backdrop */}
-        {isLoading && (
-          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500">
-            {/* Animated Spinner */}
-            <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin"></div>
-            <p className="mt-4 text-white font-moulpali animate-pulse">
-              សូមរង់ចាំបន្តិច...
-            </p>
-          </div>
+
+        {/* ២. ដំណាក់កាល Splash Screen */}
+        {stage === "splash" && (
+          <motion.div
+            key="splash"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
+            transition={{ duration: 1 }}
+          >
+            <SplashScreen name={sample.name} onClick={handleOpenDoor} />
+          </motion.div>
         )}
-      </div>
-    </GalaxyBackground>
+
+        {/* ៣. ដំណាក់កាល Main Content (គេហទំព័រដើម) */}
+        {stage === "main" && (
+          <motion.div
+            key="main"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="h-full"
+          >
+            <HomeScreen />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 

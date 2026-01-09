@@ -14,7 +14,7 @@ const BentoGrid = () => {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   return (
-    <div className="p-4 w-full relative">
+    <div className="w-full relative">
       <div
         className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto"
         style={{

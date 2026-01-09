@@ -11,7 +11,7 @@ interface IStar {
   draw: (ctx: CanvasRenderingContext2D, width: number, height: number) => void;
 }
 
-const BG_COLOR = "#7B542F";
+const BG_COLOR = "#9b7157";
 
 const GalaxyBackground = ({ children }: PropsWithChildren) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

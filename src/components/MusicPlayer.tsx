@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Piano } from "lucide-react";
 import Song from "../assets/mp3/yung kai - Blue Piano Cover Sheet Music.mp3";
 
 function MusicPlayer() {
@@ -41,8 +41,12 @@ function MusicPlayer() {
         onClick={toggleMusic}
         className="bg-sand text-white p-2 rounded-full shadow transition"
       >
-        <div className={`${isPlaying ? "animate-spin-slow" : ""}`}>
-          {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+        <div className={`${isPlaying ? "animate-spin-slow" : ""} p-1`}>
+          {isPlaying ? (
+            <Piano className="size-4" />
+          ) : (
+            <Pause className="size-4" />
+          )}
         </div>
       </button>
     </div>
