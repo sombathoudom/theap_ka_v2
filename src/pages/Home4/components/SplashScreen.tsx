@@ -46,7 +46,7 @@ const SplashScreen = ({
               <Svg7 className="w-full" />
 
               {/* អត្ថបទស្ថិតនៅចំកណ្តាល SVG ជានិច្ច */}
-              <p className="absolute  text-center text-yellow-400 text-[12px] moulpali-medium leading-7 px-4 max-w-sm">
+              <p className="absolute  text-center text-yellow-400 text-[12px] moul-regular leading-7 px-4 max-w-sm">
                 {name}
               </p>
             </div>

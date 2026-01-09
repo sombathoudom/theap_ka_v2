@@ -15,7 +15,7 @@ import GalaxyBackground from "./GalaxyBg";
 const HomeScreen = () => {
   return (
     <GalaxyBackground>
-      <div className="space-y-6 mx-auto overflow-auto h-full">
+      <div className="space-y-4 mx-auto overflow-auto h-full">
         <PlayMusicButton audioUrl={audioUlr} />
         {/* Khmer */}
         <Reveal>

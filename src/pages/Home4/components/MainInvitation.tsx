@@ -15,7 +15,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
             className={`text-center  leading-loose ${
               lang === "kh"
                 ? "text-2xl moulpali-medium"
-                : "text-4xl imperial-script-regular"
+                : "text-4xl fleur-de-leah-regular "
             } text-primary`}
           >
             {data.header[lang].main}
@@ -31,16 +31,14 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
               <div className="grid grid-cols-3 items-center">
                 <span
                   className={`text-[12px] text-white ${
-                    lang === "kh"
-                      ? "moulpali-regular"
-                      : "imperial-script-regular"
+                    lang === "kh" ? "metal-regular" : "imperial-script-regular"
                   } leading-8 whitespace-nowrap`}
                 >
                   {p.name1.label}
                 </span>
                 <p
                   className={`text-primary text-sm ${
-                    lang === "kh" ? "moulpali-regular" : "caramel-regular"
+                    lang === "kh" ? "moul-regular" : "caramel-regular"
                   } leading-8 text-center whitespace-nowrap col-span-2 `}
                 >
                   {p.name1.value}
@@ -49,16 +47,14 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
               <div className="grid grid-cols-3 items-center">
                 <span
                   className={`text-[12px] text-white ${
-                    lang === "kh"
-                      ? "moulpali-regular"
-                      : "imperial-script-regular"
+                    lang === "kh" ? "metal-regular" : "imperial-script-regular"
                   } leading-8 whitespace-nowrap`}
                 >
                   {p.name2.label}
                 </span>
                 <p
                   className={`text-primary text-sm ${
-                    lang === "kh" ? "moulpali-regular" : "caramel-regular"
+                    lang === "kh" ? "moul-regular" : "caramel-regular"
                   } leading-8 text-center whitespace-nowrap col-span-2 `}
                 >
                   {p.name2.value}
@@ -98,7 +94,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
           </span>
           <p
             className={`text-sm   ${
-              lang === "kh" ? "moulpali-regular" : "caramel-regular"
+              lang === "kh" ? "moul-regular" : "caramel-regular"
             }   text-primary leading-8 text-center whitespace-nowrap`}
           >
             {data.couple[lang].name1.value}
@@ -117,7 +113,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
           </span>
           <p
             className={`text-sm  ${
-              lang === "kh" ? "moulpali-regular" : "caramel-regular"
+              lang === "kh" ? "moul-regular" : "caramel-regular"
             }  text-primary leading-8 text-center whitespace-nowrap`}
           >
             {data.couple[lang].name2.value}
