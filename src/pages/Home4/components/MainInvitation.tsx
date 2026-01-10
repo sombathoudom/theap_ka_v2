@@ -31,14 +31,14 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
               <div className="grid grid-cols-3 items-center">
                 <span
                   className={`text-[12px] text-white ${
-                    lang === "kh" ? "metal-regular" : "imperial-script-regular"
+                    lang === "kh" ? "metal-regular" : "dm-serif-text-regular"
                   } leading-8 whitespace-nowrap`}
                 >
                   {p.name1.label}
                 </span>
                 <p
                   className={`text-primary text-sm ${
-                    lang === "kh" ? "moul-regular" : "caramel-regular"
+                    lang === "kh" ? "moul-regular" : "dm-serif-text-regular"
                   } leading-8 text-center whitespace-nowrap col-span-2 `}
                 >
                   {p.name1.value}
@@ -47,14 +47,14 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
               <div className="grid grid-cols-3 items-center">
                 <span
                   className={`text-[12px] text-white ${
-                    lang === "kh" ? "metal-regular" : "imperial-script-regular"
+                    lang === "kh" ? "metal-regular" : "dm-serif-text-regular"
                   } leading-8 whitespace-nowrap`}
                 >
                   {p.name2.label}
                 </span>
                 <p
                   className={`text-primary text-sm ${
-                    lang === "kh" ? "moul-regular" : "caramel-regular"
+                    lang === "kh" ? "moul-regular" : "dm-serif-text-regular"
                   } leading-8 text-center whitespace-nowrap col-span-2 `}
                 >
                   {p.name2.value}
@@ -67,7 +67,11 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
       {/* Invitation message */}
       <div className="space-y-3 max-w-md">
         <div>
-          <h1 className="text-center text-primary  text-lg moul-regular  leading-10">
+          <h1
+            className={`text-center text-primary  ${
+              lang == "kh" ? "text-[12px]" : "text-xl"
+            } moul-regular  leading-10`}
+          >
             {data.header[lang].title}
           </h1>
           <div className="flex items-center justify-center">
@@ -75,27 +79,33 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
           </div>
         </div>
         <p
-          className={`text-center text-[12px] text-white ${
-            lang === "kh" ? "moulpali-regular" : "imperial-script-regular"
-          } leading-[2.5]`}
+          className={`text-center  text-white ${
+            lang === "kh"
+              ? "text-[12px] moulpali-regular leading-6"
+              : "tangerine-regular text-2xl leading-10"
+          } `}
           dangerouslySetInnerHTML={{ __html: data.header[lang].desc }}
         />
       </div>
 
       {/* Couple content */}
-      <div className="grid grid-cols-3 w-full gap-4 max-w-sm">
+      <div className="grid grid-cols-3 w-full  max-w-sm">
         <div className="flex flex-col justify-center items-center">
           <span
-            className={`text-[12px] text-white ${
-              lang === "kh" ? "moulpali-regular" : "imperial-script-regular"
+            className={` text-white ${
+              lang === "kh"
+                ? "text-[12px] moulpali-regular"
+                : "text-2xl tangerine-bold"
             } leading-8 whitespace-nowrap text-center`}
           >
             {data.couple[lang].name1.label}
           </span>
           <p
-            className={`text-sm   ${
-              lang === "kh" ? "moul-regular" : "caramel-regular"
-            }   text-primary leading-8 text-center whitespace-nowrap`}
+            className={`text-sm ${
+              lang === "kh"
+                ? "text-[12px] moul-regular whitespace-nowrap"
+                : "dm-serif-text-regular whitespace-prewrap"
+            }   text-primary leading-2 text-center `}
           >
             {data.couple[lang].name1.value}
           </p>
@@ -105,15 +115,17 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
         </div>
         <div className="flex flex-col justify-center items-center">
           <span
-            className={`text-[12px] text-white ${
-              lang === "kh" ? "moulpali-regular" : "imperial-script-regular"
+            className={`text-white ${
+              lang === "kh"
+                ? "text-[12px] moulpali-regular"
+                : "text-2xl tangerine-bold"
             } leading-8 whitespace-nowrap text-center`}
           >
             {data.couple[lang].name2.label}
           </span>
           <p
             className={`text-sm  ${
-              lang === "kh" ? "moul-regular" : "caramel-regular"
+              lang === "kh" ? "moul-regular" : "dm-serif-text-regular"
             }  text-primary leading-8 text-center whitespace-nowrap`}
           >
             {data.couple[lang].name2.value}
@@ -124,8 +136,8 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
       <div className="grid grid-cols-3 w-full items-center text-primary max-w-sm">
         {/* left */}
         <p
-          className={`text-sm ${
-            lang === "kh" ? "moul-regular" : "imperial-script-regular"
+          className={` ${
+            lang === "kh" ? "text-sm moul-regular" : "tangerine-bold text-2xl"
           } leading-8 text-center whitespace-nowrap border-primary border-y py-2`}
         >
           {format(parseISO(data.date), lang === "kh" ? "ថ្ងៃ eeee" : "eeee", {
@@ -135,8 +147,8 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
         {/* mid */}
         <div className="text-center">
           <p
-            className={`text-lg ${
-              lang === "kh" ? "moul-regular" : "imperial-script-regular"
+            className={` ${
+              lang === "kh" ? "text-lg moul-regular" : "tangerine-bold text-2xl"
             } leading-8 text-center whitespace-nowrap`}
           >
             {format(parseISO(data.date), lang === "kh" ? "ខែ MMMM" : "MMMM", {
@@ -144,8 +156,8 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
             })}
           </p>
           <p
-            className={`text-5xl ${
-              lang === "kh" ? "moul-regular" : "imperial-script-regular"
+            className={` text-5xl ${
+              lang === "kh" ? " moul-regular" : "tangerine-bold"
             } leading-normal text-center whitespace-nowrap`}
           >
             {lang === "kh"
@@ -159,8 +171,8 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
                 })}
           </p>
           <p
-            className={`text-lg ${
-              lang === "kh" ? "moul-regular" : "imperial-script-regular"
+            className={` ${
+              lang === "kh" ? "text-lg moul-regular" : "text-5xl tangerine-bold"
             } leading-8 text-center whitespace-nowrap`}
           >
             {lang === "kh"
@@ -176,8 +188,8 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
         </div>
         {/* right */}
         <p
-          className={`text-sm ${
-            lang === "kh" ? "moul-regular" : "imperial-script-regular"
+          className={` ${
+            lang === "kh" ? "text-sm moul-regular" : "text-2xl tangerine-bold"
           } leading-8 text-center whitespace-nowrap border-primary border-y py-2`}
         >
           {lang === "kh"
