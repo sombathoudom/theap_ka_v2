@@ -69,7 +69,7 @@ const MainInvitation = ({ data, lang }: { data: InvType; lang: Lang }) => {
         <div>
           <h1
             className={`text-center text-primary  ${
-              lang == "kh" ? "text-[12px]" : "text-xl"
+              lang == "kh" ? "text-sm" : "text-xl"
             } moul-regular  leading-10`}
           >
             {data.header[lang].title}

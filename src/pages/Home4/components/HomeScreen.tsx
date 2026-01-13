@@ -28,14 +28,13 @@ const HomeScreen = () => {
               className="text-[12px] text-white moulpali-regular leading-[2.5] text-center"
               dangerouslySetInnerHTML={{ __html: INVSAMPE.map.desc }}
             />
-
             <p className="text-[12px] moulpali-regular text-white leading-normal">
-              សូមស្កេន <span className="font-sans">QR</span>{" "}
-              ខាងក្រោមដើម្បីមើលទីតាំង
+              សូមចុចបូតុងខាងក្រោមដើម្បីមើលទីតាំង
             </p>
-            <button className="bg-white/90 hover:bg-white px-6 py-3 rounded-lg font-semibold moulpali-medium shadow-lg transition-all">
+            <img src="/location_scale.webp" alt="location" className="w-full h-auto object-cover"/>
+            <a  href="https://maps.app.goo.gl/MnBCj8c3JM6Qo6dVA" target="_blank" className="bg-white/90 hover:bg-white px-6 py-3 rounded-lg font-semibold moulpali-medium shadow-lg transition-all">
               ឬចុចទីនេះ
-            </button>
+            </a>
           </div>
         </Reveal>
         {/* ENGlish */}
@@ -51,7 +50,9 @@ const HomeScreen = () => {
             <BentoGrid />
           </div>
         </Reveal>
-        <TimeLine />
+        <Reveal>
+          <TimeLine/>
+        </Reveal>
       </div>
     </GalaxyBackground>
   );

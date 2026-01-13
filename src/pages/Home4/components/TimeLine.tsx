@@ -12,7 +12,7 @@ import {
   ChevronDown,
   LucideIcon,
 } from "lucide-react";
-import { TIMELINE } from "./data/sample";
+import { TIMELINE, TIMELINE_SECOND } from "./data/sample";
 import { cn } from "../../../utils/validation";
 
 export interface TimeLineItem {
@@ -50,7 +50,7 @@ function TimeLineCard({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
-  return (
+  return ( 
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
@@ -91,16 +91,17 @@ function TimeLineCard({
         transition={{ duration: 0.5, delay: 0.8 }}
         className={cn("w-full ml-12")}
       >
-        <div className="flex flex-col items-start">
-          <h3 className="text-lg text-white font-bold moul-regular leading-tight flex items-center">
+        <div className="flex flex-col items-start gap-2">
+          <h3 className="text-sm text-white  moul-regular  flex items-center">
             {timeline.title}
           </h3>
-          <span className="text-sm text-primary font-medium metal-regular">
-            {timeline.subtitle}
+          <span className="text-sm/6 text-primary text-left metal-regular tracking-wide" dangerouslySetInnerHTML={{ __html: timeline.subtitle }}>
           </span>
+
         </div>
       </motion.div>
     </motion.div>
+   
   );
 }
 
@@ -114,7 +115,7 @@ export default function TimeLine({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center mb-8 md:mb-16"
+        className="text-center mb-8 md:mb-16 mt-12"
       >
         <h1 className="text-center text-3xl leading-loose moulpali-medium text-primary">
           របៀបភាវរៈកម្មវិធី
@@ -123,7 +124,6 @@ export default function TimeLine({
           កម្មវិធីថ្ងៃទី១ ថ្ងៃ សៅរ៍ ទី ២១ ខែ កុម្ភះ ឆ្នាំ ២០២៦
         </p>
       </motion.div>
-
       <div className="relative max-w-sm mx-auto">
         {TIMELINE.map((timeline, index) => (
           <TimeLineCard
@@ -140,6 +140,7 @@ export default function TimeLine({
           className="absolute -bottom-4 left-3 w-6 h-6 bg-gradient-to-r from-[#f9c20c] to-yellow-200 rounded-full"
         /> */}
       </div>
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -152,11 +153,11 @@ export default function TimeLine({
         </p>
       </motion.div>
       <div className="relative max-w-sm mx-auto">
-        {TIMELINE.map((timeline, index) => (
+        {TIMELINE_SECOND.map((timeline, index) => (
           <TimeLineCard
             key={index}
             timeline={timeline}
-            last={TIMELINE.length - 1 === index}
+            last={TIMELINE_SECOND.length - 1 === index}
           />
         ))}
         {/* <motion.div
