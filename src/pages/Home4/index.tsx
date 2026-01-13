@@ -1,4 +1,4 @@
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState, useRef } from "react";
 import SplashScreen from "./components/SplashScreen";
 import { useParams } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
@@ -9,7 +9,7 @@ export const audioUlr = "/yung kai - Blue Piano Cover Sheet Music.mp3";
 const Home4 = () => {
   const { id } = useParams();
   const [stage, setStage] = useState<"intro" | "splash" | "main">("intro");
-
+  const videoRef = useRef<HTMLVideoElement>(null);
   // context
   const { playTrack } = useMusic();
 
@@ -28,6 +28,9 @@ const Home4 = () => {
     if (stage === "main") {
       playTrack(audioUlr);
     }
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.85;
+    }
   }, [stage]);
 
   return (
@@ -42,6 +45,7 @@ const Home4 = () => {
             className="absolute inset-0 z-50 bg-black flex items-center justify-center"
           >
             <video
+              ref={videoRef}
               autoPlay
               muted
               playsInline
