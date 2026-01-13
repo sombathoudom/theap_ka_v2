@@ -149,7 +149,10 @@ export const TIMELINE_SECOND: TimeLineItem[] = [
   },
   {
     title: "វេលាម៉ោង ​០៧:០០ ព្រឹក",
-    subtitle: "ពិធីហែរជំនូន និយាយជើងការ ទទួលទានស្លាកំណត់ ពិធីច្រៀងរៀបរាប់ផ្លែឈើតូច ឬ ភ្ជាប់ព្រលឹងទាំង១៩ ព្រេនឬសែនជំនូន"+ '<br/>' +"អញ្ជើញភ្ញៀវកិត្តិយសទទួលទានអាហារពេលព្រឹក",
+    subtitle:
+      "ពិធីហែរជំនូន និយាយជើងការ ទទួលទានស្លាកំណត់ ពិធីច្រៀងរៀបរាប់ផ្លែឈើតូច ឬ ភ្ជាប់ព្រលឹងទាំង១៩ ព្រេនឬសែនជំនូន" +
+      "<br/>" +
+      "អញ្ជើញភ្ញៀវកិត្តិយសទទួលទានអាហារពេលព្រឹក",
     icon: Calendar,
   },
   {
@@ -164,7 +167,8 @@ export const TIMELINE_SECOND: TimeLineItem[] = [
   },
   {
     title: "វេលាម៉ោង ​១០:២៥​ ព្រឹក",
-    subtitle: "ពិធីបើកវាំងនន ដកដាវបើកទាប <br/> ពិធីសំពះផ្ទឹមចងដៃ ព្រះថោងតោងស្បៃនាងនាគ",
+    subtitle:
+      "ពិធីបើកវាំងនន ដកដាវបើកទាប <br/> ពិធីសំពះផ្ទឹមចងដៃ ព្រះថោងតោងស្បៃនាងនាគ",
     icon: Calendar,
   },
   {
@@ -172,7 +176,7 @@ export const TIMELINE_SECOND: TimeLineItem[] = [
     subtitle: "អញ្ជើញភ្ញៀវកិត្តិយសទទួលទានអាហារថ្ងៃត្រង់",
     icon: Calendar,
   },
-   {
+  {
     title: "វេលាម៉ោង ​០៥:០០ ល្ងាច",
     subtitle: "អញ្ជើញភ្ញៀវកិត្តិយសទទួលទានអាហារពេលល្ងាច",
     icon: Calendar,
@@ -182,32 +186,32 @@ export const TIMELINE_SECOND: TimeLineItem[] = [
 export const items = [
   {
     id: "1",
-    img: "/photo_album_1.jpg",
-    height: 600,
+    img: "/pre_wedding_img/IMG_2728.webp",
+    height: 1,
   },
   {
     id: "2",
-    img: "/photo_album_2.jpg",
+    img: "/pre_wedding_img/IMG_2742.webp",
     height: 400,
   },
   {
     id: "3",
-    img: "/photo_album_3.jpg",
+    img: "/pre_wedding_img/IMG_2751.webp",
     height: 600,
   },
   {
     id: "4",
-    img: "/photo_album_4.jpg",
+    img: "/pre_wedding_img/IMG_2768.webp",
     height: 300,
   },
   {
     id: "5",
-    img: "/photo_album_5.jpg",
+    img: "/pre_wedding_img/IMG_2782.webp",
     height: 500,
   },
   {
     id: "6",
-    img: "/photo_album_6.jpg",
+    img: "/pre_wedding_img/IMG_2783.webp",
     height: 600,
   },
 ];

@@ -31,9 +31,17 @@ const HomeScreen = () => {
             <p className="text-[12px] moulpali-regular text-white leading-normal">
               សូមចុចបូតុងខាងក្រោមដើម្បីមើលទីតាំង
             </p>
-            <img src="/location_scale.webp" alt="location" className="w-full h-auto object-cover"/>
-            <a  href="https://maps.app.goo.gl/MnBCj8c3JM6Qo6dVA" target="_blank" className="bg-white/90 hover:bg-white px-6 py-3 rounded-lg font-semibold moulpali-medium shadow-lg transition-all">
-              ឬចុចទីនេះ
+            <img
+              src="/location_scale.webp"
+              alt="location"
+              className="w-full h-auto object-cover"
+            />
+            <a
+              href="https://maps.app.goo.gl/MnBCj8c3JM6Qo6dVA"
+              target="_blank"
+              className="bg-white/90 hover:bg-white px-4 py-3 rounded-lg font-semibold moulpali-medium shadow-lg transition-all"
+            >
+              បើកមើលក្នុង Google Map
             </a>
           </div>
         </Reveal>
@@ -44,14 +52,17 @@ const HomeScreen = () => {
         {/* Aniversary content */}
         <Reveal>
           <div className="flex flex-col items-center gap-4 pt-2">
-            <p className="moulpali-medium text-primary">
-              កម្រងរូបភាពអាពាហ៍ពិពាហ៍របស់យើង
-            </p>
+            <span className="moulpali-medium text-primary">
+              កម្រងរូបភាព
+              <span className="dm-serif-text-regular text-2xl font-bold">
+                Pre-Wedding
+              </span>
+            </span>
             <BentoGrid />
           </div>
         </Reveal>
         <Reveal>
-          <TimeLine/>
+          <TimeLine />
         </Reveal>
       </div>
     </GalaxyBackground>
