@@ -2,39 +2,24 @@ import { AnimatePresence, motion } from "framer-motion";
 import { items } from "./data/sample";
 import { useState } from "react";
 
-const layoutStyles = [
-  "row-span-5", // Slot 1 (Left top)
-  "row-span-7", // Slot 2 (Right top)
-  "row-span-7 row-start-6", // Slot 3 (Left middle-bottom)
-  "row-span-5 col-start-2 row-start-8", // Slot 4 (Right bottom)
-];
-
 const BentoGrid = () => {
   // State សម្រាប់រក្សាទុក URL រូបភាពដែលត្រូវបង្ហាញក្នុង Dialog
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   return (
     <div className="w-full relative">
-      <div
-        className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto"
-        style={{
-          display: "grid",
-          gridTemplateRows: `repeat(${
-            Math.ceil(items.length / 2) * 6
-          }, minmax(40px, auto))`,
-        }}
-      >
+      <div className="grid grid-cols-2 gap-4 w-full max-w-sm mx-auto">
         {items.map((item, index) => (
           <motion.div
             key={item.id}
-            layoutId={`img-${item.id}`} // សម្រាប់ធ្វើចលនាពង្រីក (Shared Layout)
+            layoutId={`img-${item.id}`}
             onClick={() => setSelectedImg(item.img)}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: (index % 4) * 0.1 }}
             className={`${
-              layoutStyles[index % layoutStyles.length]
+              item.orientation === "vertical" ? "col-span-1" : "col-span-2"
             } rounded-2xl overflow-hidden cursor-zoom-in border border-primary shadow-xl`}
           >
             <motion.img
@@ -69,14 +54,6 @@ const BentoGrid = () => {
                 alt="Enlarged"
                 className="rounded-lg shadow-2xl max-w-full max-h-[85vh] object-contain border border-white/20"
               />
-
-              {/* ប៊ូតុងបិទ */}
-              {/* <button
-                onClick={() => setSelectedImg(null)}
-                className="absolute -top-12 right-0 text-white text-3xl font-light hover:text-amber-400 transition-colors"
-              >
-                ✕ បិទ
-              </button> */}
             </motion.div>
           </div>
         )}

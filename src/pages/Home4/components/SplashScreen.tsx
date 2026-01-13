@@ -12,7 +12,7 @@ const SplashScreen = ({
 }) => {
   //   console.log(search);
   return (
-    <div className="relative h-screen">
+    <div className="relative h-full">
       <img
         src="/splash-screen.jpeg"
         alt="dn"

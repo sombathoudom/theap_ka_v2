@@ -183,35 +183,46 @@ export const TIMELINE_SECOND: TimeLineItem[] = [
   },
 ];
 
-export const items = [
+export const items: {
+  id: string;
+  img: string;
+  height: number;
+  orientation: "vertical" | "horizontal";
+}[] = [
   {
     id: "1",
     img: "/pre_wedding_img/IMG_2728.webp",
     height: 1,
+    orientation: "vertical",
   },
   {
     id: "2",
     img: "/pre_wedding_img/IMG_2742.webp",
     height: 400,
+    orientation: "vertical",
   },
   {
     id: "3",
     img: "/pre_wedding_img/IMG_2751.webp",
     height: 600,
+    orientation: "horizontal",
   },
   {
     id: "4",
     img: "/pre_wedding_img/IMG_2768.webp",
     height: 300,
-  },
-  {
-    id: "5",
-    img: "/pre_wedding_img/IMG_2782.webp",
-    height: 500,
+    orientation: "vertical",
   },
   {
     id: "6",
     img: "/pre_wedding_img/IMG_2783.webp",
     height: 600,
+    orientation: "vertical",
+  },
+  {
+    id: "5",
+    img: "/pre_wedding_img/IMG_2782.webp",
+    height: 500,
+    orientation: "horizontal",
   },
 ];
