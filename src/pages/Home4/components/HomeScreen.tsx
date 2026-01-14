@@ -64,6 +64,22 @@ const HomeScreen = () => {
         <Reveal>
           <TimeLine />
         </Reveal>
+        <Reveal>
+          <div className="flex flex-col items-center gap-4 pt-2">
+            <p className="text-primary moul-regular text-xl">
+              លិខិតថ្លែងអំណរគុណ
+            </p>
+            <Svg4 className="h-4 w-full" />
+            <p className="text-base text-primary metal-regular leading-loose">
+              យើងខ្ញុំជាមាតាវិតា​ កូនប្រុស-កូនស្រី <br />
+              សូមថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅចំពោះវត្តមាន <br />
+              ឯកឧត្តម លោកឧកញ៉ា លោកជំទាវ លោក លោកស្រី <br />
+              អ្នកនាងកញ្ញា ជាកិត្តិយសដ៏ឧត្តុង្គឧត្តម <br />
+              ចំពោះគ្រួសាររបស់យើងខ្ញុំ។
+            </p>
+            <p></p>
+          </div>
+        </Reveal>
       </div>
     </GalaxyBackground>
   );

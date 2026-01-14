@@ -29,12 +29,12 @@ const Home4 = () => {
       playTrack(audioUlr);
     }
     if (videoRef.current) {
-      videoRef.current.playbackRate = 1.85;
+      videoRef.current.playbackRate = 1.5;
     }
   }, [stage]);
 
   return (
-    <div className="relative w-full h-dvh overflow-hidden max-w-md mx-auto">
+    <div className="relative w-full h-dvh overflow-hidden max-w-md mx-auto aspect-9/16 no-scrollbar">
       <AnimatePresence mode="wait">
         {/* ១. ដំណាក់កាល Video Intro */}
         {stage === "intro" && (
