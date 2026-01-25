@@ -77,8 +77,8 @@ export const INVSAMPE = {
                 "ថ្ងៃទី dd ខែ MMMM ឆ្នាំ yyyy វេលាម៉ោង HH:mm ល្ងាច",
                 {
                   locale: km,
-                }
-              )
+                },
+              ),
             )}
           </b>
           ស្ថិតនៅ
@@ -226,3 +226,19 @@ export const items: {
     orientation: "horizontal",
   },
 ];
+
+const newLocal = {
+  cmku7nkd40004356o6orh5igg: {
+    name: "លោក ចាំង សុវណ្ណរិទ្ធីឌីរតនះ​ និងភរិយា (កុលាប)",
+  },
+  cmku95kam0005356ozks3es11: {
+    name: "Ms. Heng SreyNeth and Honey ( ផ្កាម្លិះ )",
+  },
+  cmku9bh9q0006356o0beic8hf: {
+    name: "Ms. Keo Vimean ( ផ្កាម្លិះ )",
+  },
+  cmku9c0gu0007356os8geyscp: {
+    name: "Ms. Mao Lyly ( ផ្កាម្លិះ )",
+  },
+};
+export const CusName: Record<string, { name: string }> = newLocal;

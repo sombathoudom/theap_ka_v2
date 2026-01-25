@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import HomeScreen from "./components/HomeScreen";
 import { useMusic } from "../../context/MusicContext";
 import { AnimatePresence, motion } from "framer-motion";
-
+import { CusName } from "./components/data/sample";
 export const audioUlr = "/yung kai - Blue Piano Cover Sheet Music.mp3";
 const Home4 = () => {
   const { id } = useParams();
@@ -14,15 +14,15 @@ const Home4 = () => {
   const { playTrack } = useMusic();
 
   // this should filter from api for use data mock up
-  const sample = {
-    id: id,
-    name: "លោក ចាំង សុវណ្ណរិទ្ធីឌីរតនះ​ និងភរិយា (កុលាប)",
-  };
-
+  const cus = id ? CusName[id] : undefined;
   // handle open door
   const handleOpenDoor = () => {
     setStage("main");
   };
+
+  useEffect(() => {
+    videoRef.current?.play().catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (stage === "main") {
@@ -48,11 +48,12 @@ const Home4 = () => {
               ref={videoRef}
               autoPlay
               muted
+              preload="auto"
               playsInline
               onEnded={() => setStage("splash")} // នៅពេល Video ចប់ វានឹងដូរទៅ Splash
               className="w-full h-full object-cover"
             >
-              <source src="/intro_video.mp4" type="video/mp4" />
+              <source src="/final-video-for-theapka.mp4" type="video/mp4" />
             </video>
           </motion.div>
         )}
@@ -67,7 +68,7 @@ const Home4 = () => {
             transition={{ duration: 1 }}
             className="h-dvh"
           >
-            <SplashScreen name={sample.name} onClick={handleOpenDoor} />
+            <SplashScreen name={cus?.name ?? ""} onClick={handleOpenDoor} />
           </motion.div>
         )}
 
