@@ -241,7 +241,7 @@ const newLocal = {
     name: "Ms. Mao Lyly ( ផ្កាម្លិះ )",
   },
   cmkvi5ear0001356lrxm2ilpn: {
-    name: "",
+    name: "Mr. Heng Bunna ( ផ្កាចំប៉ី )",
   },
 };
 export const CusName: Record<string, { name: string }> = newLocal;
