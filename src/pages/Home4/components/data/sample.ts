@@ -243,5 +243,89 @@ const newLocal = {
   cmkvi5ear0001356lrxm2ilpn: {
     name: "Mr. Heng Bunna ( ផ្កាចំប៉ី )",
   },
+  cml3wsi37000004jsdge74td1: {
+    name: "បងស្រី Em and Fiance ( ផ្កាឈូក )",
+  },
+  cml3wtknc000104jsav40acrj: {
+    name: "បងស្រី Sous Siev Huy ( ផ្កាឈូក )",
+  },
+  cml3wu9t7000004l7e2oy4o7h: {
+    name: "បងប្រុស Sous Senghong and Honey ( ផ្កាឈូក )",
+  },
+  cml3wv027000104l73hn53d3g: {
+    name: "Tufy and Honey ( ផ្កាឈូក )",
+  },
+  cml3wv6sk000204l79l0p0rlt: {
+    name: "Vannak ( ផ្កាឈូក )",
+  },
+  cml3wvx57000304l77sh2estp: {
+    name: "Tino ( ផ្កាឈូក )",
+  },
+  cml3ww3kc000404l7ce2na586: {
+    name: "Ms. Thida ( ផ្កាឈូក )",
+  },
+  cml3wy598000504l733eegx7i: {
+    name: "Ms. ទេព​ សុម៉ាលីណា ( ផ្កាម្លិះ )",
+  },
+  cml3wyc09000604l79g5x3cxh: {
+    name: "Ms. មំុ សុីឌីរ៉េត ( ផ្កាម្លិះ )",
+  },
+  cml3wzc5x000704l72ecybcvw: {
+    name: "Ms. សៀន លក្ខិណា ( ផ្កាម្លិះ )",
+  },
+  cml3wzgi0000804l728hv3vhh: {
+    name: "Ms. Mei Yu ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100001804l9r0k1a1: {
+    name: "Mr. Mor ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100021804l3n5q7b2: {
+    name: "Mr. Lan ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100031804lq8f9c3: {
+    name: "Mr. Nith ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100041804l1k2d4e: {
+    name: "Mr. Ty ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100041804l1k2d4o: {
+    name: "Mr. Denn ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100051804l5m6f7g: {
+    name: "Mr. Munea ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100061804l8h9i0j: {
+    name: "Mr. Za ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100071804l2k3l4m: {
+    name: "Mr. Sena ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100081804l6n7o8p: {
+    name: "Mr. Dom ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100091804l9q0r1s: {
+    name: "Mr. Bunna ( ផ្កាម្លិះ )",
+  },
+  cml3x0a1000a1804lt2u3v4: {
+    name: "Ms. Yana ( ផ្កាម្លិះ )",
+  },
+  cml3x0a1000b1804lw5x6y7: {
+    name: "Mr. Panha ( ផ្កាម្លិះ )",
+  },
+  cml3x4kz0000c804l1a2b3c: {
+    name: "Mr. ទ្រី គឹមលុច ( ផ្កាម្លិះ )",
+  },
+  cml3x4kz0000d804l4e5f6g: {
+    name: "Mr. ណាក់ សុខទ្រី ( ផ្កាម្លិះ )",
+  },
+  cml3x4kz0000e804l7h8i9j: {
+    name: "Mr.​ កាក់ ចំរើនឆ័យ ( ផ្កាម្លិះ )",
+  },
+  cml3x4kz0000f804lk1l2m3: {
+    name: "Ms. លី ចាន់សូរិយា ( ផ្កាម្លិះ )",
+  },
+  cml3x0a100041804l1k2d49: {
+    name: "Mr. Yuth ( ផ្កាម្លិះ )",
+  },
 };
 export const CusName: Record<string, { name: string }> = newLocal;

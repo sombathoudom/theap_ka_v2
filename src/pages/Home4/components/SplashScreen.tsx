@@ -37,8 +37,8 @@ const SplashScreen = ({
         {/* Content */}
         <FadeIn className="w-full">
           <div className="w-full flex flex-col items-center gap-4 relative pb-12">
-            <CountdownTimer targetDate={INVSAMPE.date} />
-            <p className="text-center z-10 text-lg moulpali-medium text-white">
+            {/* <CountdownTimer targetDate={INVSAMPE.date} /> */}
+            <p className="text-center z-10 text-2xl moulpali-medium text-white">
               សូមគោរពអញ្ចើញ
             </p>
             <div className="z-10 p-3 relative w-full flex items-center justify-center">
@@ -46,7 +46,11 @@ const SplashScreen = ({
               <Svg7 className="w-full" />
 
               {/* អត្ថបទស្ថិតនៅចំកណ្តាល SVG ជានិច្ច */}
-              <p className="absolute  text-center text-yellow-400 text-[12px] moul-regular leading-7 px-4 max-w-sm">
+              <p
+                className={`absolute text-center text-yellow-400 moul-regular leading-7 px-4 max-w-sm ${
+                  name.length > 30 ? "text-[14px]" : "text-[18px]"
+                }`}
+              >
                 {name}
               </p>
             </div>

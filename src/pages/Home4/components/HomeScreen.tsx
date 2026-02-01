@@ -29,7 +29,7 @@ const HomeScreen = () => {
               dangerouslySetInnerHTML={{ __html: INVSAMPE.map.desc }}
             />
             <p className="text-[12px] moulpali-regular text-white leading-normal">
-              សូមចុចបូតុងខាងក្រោមដើម្បីមើលទីតាំង
+              📍សូមចុចបូតុងខាងក្រោមដើម្បីមើលទីតាំង
             </p>
             <img
               src="/location_scale.webp"
@@ -41,7 +41,7 @@ const HomeScreen = () => {
               target="_blank"
               className="bg-white/90 hover:bg-white px-4 py-3 rounded-lg font-semibold moulpali-medium shadow-lg transition-all"
             >
-              បើកមើលក្នុង Google Map
+              📍បើកមើលក្នុង Google Map
             </a>
           </div>
         </Reveal>
