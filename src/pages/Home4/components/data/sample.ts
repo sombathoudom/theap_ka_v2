@@ -324,7 +324,7 @@ const newLocal = {
   cml3x4kz0000f804lk1l2m3: {
     name: "Ms. លី ចាន់សូរិយា ( ផ្កាម្លិះ )",
   },
-  cml3x0a100041804l1k2d49: {
+  cml3ykf5m000004l87027gtbn: {
     name: "Mr. Yuth ( ផ្កាម្លិះ )",
   },
 };
