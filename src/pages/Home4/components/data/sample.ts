@@ -262,7 +262,7 @@ const newLocal = {
     name: "Tino ( ផ្កាឈូក )",
   },
   cml3ww3kc000404l7ce2na586: {
-    name: "Ms. Thida ( ផ្កាឈូក )",
+    name: "Ms. Tep Thyda ( ផ្កាឈូក )",
   },
   cml3wy598000504l733eegx7i: {
     name: "Ms. ទេព​ សុម៉ាលីណា ( ផ្កាម្លិះ )",
