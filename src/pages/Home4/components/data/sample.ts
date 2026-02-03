@@ -327,7 +327,7 @@ const newLocal = {
   cml3ykf5m000004l87027gtbn: {
     name: "Mr. Yuth ( ផ្កាម្លិះ )",
   },
-  cml3ykf5m000004l87027ghtbn: {
+  cml4ykf5m000004l87027ghtbn: {
     name: "អ្នកនាង​ ពេជ្យ ចាន់រស្មី និងស្វាមី",
   },
 };
