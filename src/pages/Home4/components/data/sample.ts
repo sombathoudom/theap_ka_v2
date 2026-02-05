@@ -330,5 +330,8 @@ const newLocal = {
   cml4ykf5m000004l87027ghtbn: {
     name: "អ្នកនាង​ ពេជ្យ ចាន់រស្មី និងស្វាមី ( ផ្កាម្លិះ )",
   },
+  cml5ykf5m000004l87027ghn: {
+    name: "លោក រ៉ាយ សុផានិត (ផ្កាចំបុី)",
+  },
 };
 export const CusName: Record<string, { name: string }> = newLocal;
