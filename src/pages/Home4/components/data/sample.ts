@@ -336,5 +336,11 @@ const newLocal = {
   cml5ykf6m000004l87027ghn: {
     name: "លោកបង បញ្ញា និងភរិយា (ផ្កាចំបុី)",
   },
+  cml5ykf7m000004l87027ghn: {
+    name: "លោក វ៉ាន់ ក្តេរ និងភរិយា (ផ្កាចំបុី)",
+  },
+  cml5ykf7m000001l87027ghn: {
+    name: "លោក ប្អូន សុង និងភរិយា (ផ្កាចំបុី)",
+  },
 };
 export const CusName: Record<string, { name: string }> = newLocal;
